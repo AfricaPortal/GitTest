@@ -4,21 +4,24 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import com.allianz.base.AutomationWrapper;
+
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class LoginUITest {
+public class LoginUITest extends AutomationWrapper {
 
-	WebDriver driver;
+	
 
-@BeforeMethod
-	 public void initialize()
-	 {
-	driver = new ChromeDriver ();
-	driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-    driver.manage().window().maximize();
-		 
-	 }
+
+//	 public void initialize()
+//	 {
+//	driver = new ChromeDriver ();
+//	driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+//    driver.manage().window().maximize();
+//		 
+//	 }
 
 	@Test
 	public void titletest() {
@@ -27,7 +30,7 @@ public class LoginUITest {
 		//String gettext = driver.findElement(By.xpath("//p[contains(normalize-space(), 'OS')]")).getText();
 
 		// Assert.assertEquals(gettext, "OS", "This is wrong");
-		Assert.assertEquals(actualvalue, "Orange");
+		Assert.assertEquals(actualvalue, "OrangeHRM");
 
 	}
 
